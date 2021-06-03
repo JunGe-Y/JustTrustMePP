@@ -103,9 +103,10 @@ public class Hook extends just.trust.me.Main{
 
             });
         }catch (Exception e){}
-
-
         super.handleLoadPackage(loadPackageParam);
+        super.processHttpClientAndroidLib(classLoader);
+        super.processOkHttp(classLoader);
+        super.processXutils(classLoader);
     }
     public void foundRealConnection(){
         Log.d(TAG,"找到RealConnection类"+RealConnection.getName());
