@@ -6,11 +6,11 @@ JustTrustMe++ By:军哥
 
 如果您对JustTrustMe已经有足够的了解，可跳过该介绍
 
-需要捕获应用网络流量信息的时候(简称抓包)，若应用采用是Https加密传输，便很有可能进行SSL证书验证，使你无法进行抓包，而JustTrustMe模块就是基于Xposed对应用进行Hook，使目标应用无法进行SSL验证，以达到顺利抓包的一款插件;
+需要捕获应用网络流量信息的时候(简称抓包)，若应用采用是Https加密传输，便很有可能进行SSL证书验证，使你无法进行抓包，而JustTrustMe模块就是通过Xposed对应用进行Hook，使目标应用无法进行SSL验证，以达到顺利抓包;
 
 ## 前言
-对于使用了Okhttp且被混淆的app，JustTrustMe将会失去部分效果，因为JustTrustMe将找不到okhttp的相关类，所以我们需要一个能够全自动识别混淆后okhttp类名的方式
-"珍惜"大佬已经实现了该方式，他的文章[https://www.jianshu.com/p/6f15720c7155](https://www.jianshu.com/p/6f15720c7155),
+对于使用了Okhttp且被被混淆的app，JustTrustMe将会失去部分效果，因为JustTrustMe将找不到okhttp的相关类，所以我们需要一个能够全自动识别混淆后okhttp类名的方式
+看了"珍惜"大佬的文章[https://www.jianshu.com/p/6f15720c7155](https://www.jianshu.com/p/6f15720c7155),已经实现了该方式
 ## 识别思路
 根据okhttp的类特征进行对比，比如某个类有几个构造函数，构造函数有几个参数，构造函数的参数类型分别是哪些，类成员有几个，类成员类型有哪些，每个对应的类型有多少个
 ## 现成解决方案
@@ -59,9 +59,7 @@ Hook找到的CertificatePinner类的和OkHostnameVerifier类，便可以跳过�
          at java.lang.Thread.run(Thread.java:761)
 ```
 ## 样例文件
-项目源码[https://github.com/JunGe-Y/JustTrustMePP](https://github.com/JunGe-Y/JustTrustMePP)
-
-如果您想要一个混淆后的okhttp进行测试，它就在源码根目录(demo来自于网络)，您可以直接下载
+如果您想要一个混淆后的okhttp进行测试，它就在根目录，您可以直接下载
 
 如果您不想编译，想直接使用，[请点击这里](https://github.com/JunGe-Y/JustTrustMePP/tree/master/app/release)
 ## 联系方式
